@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimeInsight Prediction Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CrimeInsight Prediction Dashboard</h1>
+    </header>
+    <main>
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>Statistik Kriminalitas</h2>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span id="totalCrimes" class="stat-value">328</span>
+                        <span class="stat-label">Total Kasus</span>
+                    </div>
+                    <div class="stat-item">
+                        <span id="predictionAccuracy" class="stat-value">56.72%</span>
+                        <span class="stat-label">Akurasi Prediksi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span id="crimeReduction" class="stat-value">-15%</span>
+                        <span class="stat-label">Penurunan YoY</span>
+                    </div>
+                </div>
+                <canvas id="crimeChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Tren Kriminalitas Bulanan</h2>
+                <canvas id="trendChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Peta Hotspot Kriminalitas DKI Jakarta</h2>
+                <div id="crimeMap"></div>
+            </div>
+            <div class="card">
+                <h2>Korelasi Faktor</h2>
+                <canvas id="correlationChart"></canvas>
+            </div>
+        </div>
+        <div class="card prediction-section">
+            <h2>Prediksi Kriminalitas</h2>
+            <div id="predictionResult"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CrimeInsight Prediction. All rights reserved.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>

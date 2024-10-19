@@ -1,0 +1,7 @@
+time
+kepadatan_penduduk
+adjusted_unemployment
+is_weekend
+crime_lag_1
+crime_lag_2
+crime_lag_3
