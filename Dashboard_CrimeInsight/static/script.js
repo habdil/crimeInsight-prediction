@@ -218,7 +218,7 @@ function displayPredictionResult(result) {
     let html = '<h3>Hasil Prediksi</h3>';
 
     const predictions = result['2024'];
-    html += `<h4>Prediksi untuk tahun 2024:</h4><ul>`;
+    html += `<h4>Prediksi untuk tahun 2024 bulan Juni:</h4><ul>`;
     for (const [region, prediction] of Object.entries(predictions)) {
         html += `<li>${region}: ${prediction.toFixed(2)} kasus</li>`;
     }
