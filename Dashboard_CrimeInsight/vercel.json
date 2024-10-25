@@ -2,22 +2,23 @@
     "version": 2,
     "builds": [
         {
-            "src": "app.py",
-            "use": "@vercel/python"
+            "src": "Dashboard_CrimeInsight/app.py",
+            "use": "@vercel/python",
+            "config": { "runtime": "python3.9" }
         },
         {
-            "src": "static/**",
+            "src": "Dashboard_CrimeInsight/static/**",
             "use": "@vercel/static"
         }
     ],
     "routes": [
         {
             "src": "/static/(.*)",
-            "dest": "/static/$1"
+            "dest": "/Dashboard_CrimeInsight/static/$1"
         },
         {
             "src": "/(.*)",
-            "dest": "app.py"
+            "dest": "/Dashboard_CrimeInsight/app.py"
         }
     ]
 }
