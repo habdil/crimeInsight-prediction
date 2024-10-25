@@ -4,11 +4,10 @@
         {
             "src": "app.py",
             "use": "@vercel/python",
-            "config": { "runtime": "python3.9" }
-        },
-        {
-            "src": "static/**",
-            "use": "@vercel/static"
+            "config": { 
+                "runtime": "python3.12",
+                "maxLambdaSize": "15mb"
+            }
         }
     ],
     "routes": [
