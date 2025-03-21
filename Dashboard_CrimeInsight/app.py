@@ -15,7 +15,7 @@ model = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsigh
 
 scaler = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/feature_scaler.joblib')
 # Load feature names
-with open('model/feature_names.txt', 'r') as f:
+with open('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/feature_names.txt', 'r') as f:
     feature_names = f.read().splitlines()
 
 @app.route('/')
