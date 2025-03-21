@@ -1,23 +1,23 @@
 from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 from joblib import load
+import os
 import pandas as pd
 from datetime import datetime
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, 'model/crime_prediction_model.joblib')
+scaler_path = os.path.join(BASE_DIR, 'model/feature_scaler.joblib')
 app = Flask(__name__)
 CORS(app)
 
 # Load model and related components
-# model = load('model/crime_prediction_model.joblib')
-# scaler = load('model/feature_scaler.joblib')
+model = load(model_path)
+scaler = load(scaler_path)
 
-model = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/crime_prediction_model.joblib')
-
-scaler = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/feature_scaler.joblib')
 # Load feature names
-with open('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/feature_names.txt', 'r') as f:
+with open(os.path.join(BASE_DIR, 'model/feature_names.txt'), 'r') as f:
     feature_names = f.read().splitlines()
-
 @app.route('/')
 def home():
     return render_template('index.html')
