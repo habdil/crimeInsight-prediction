@@ -8,9 +8,12 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model and related components
-model = load('model/crime_prediction_model.joblib')
-scaler = load('model/feature_scaler.joblib')
+# model = load('model/crime_prediction_model.joblib')
+# scaler = load('model/feature_scaler.joblib')
 
+model = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/crime_prediction_model.joblib')
+
+scaler = load('/home/alhwyji/mysite/crimeInsight-prediction/Dashboard_CrimeInsight/model/feature_scaler.joblib')
 # Load feature names
 with open('model/feature_names.txt', 'r') as f:
     feature_names = f.read().splitlines()
